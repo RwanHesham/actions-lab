@@ -2,7 +2,7 @@ name: multi-trigger
 
 on:
   push:
-    branches:[main]
+    branches: [main]
 
   workflow_dispatch:
 
