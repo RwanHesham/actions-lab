@@ -1,0 +1,20 @@
+name: function
+
+on:
+    workflow_dispatch:
+        inputs:
+            users:
+
+                description: 'JSON string of users'
+                required: true
+                default: '[{"name": "X", "age": "10"}]'
+                
+
+jobs:
+    check:
+        runs-on: ubnuntu-latest
+        steps:
+            - name: check json
+              run: |
+                 echo "Her name is ${{ fromJson(github.event.inputs.users)[0].name }} and age is ${{ fromJson(github.event.inputs.users)[0].age }}"
+                      
